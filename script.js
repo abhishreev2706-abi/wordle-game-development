@@ -12,8 +12,8 @@ const WORDS = [
 
 const KEYBOARD_ROWS = [
   ['q','w','e','r','t','y','u','i','o','p'],
-  ['a','s','d','f','g','h','j','k','l'],
-  ['Enter','z','x','c','v','b','n','m','⌫']
+  ['a','s','d','f','g','h','j','k','l','⌫'],
+  ['z','x','c','v','b','n','m','Enter']
 ];
 
 let secret, board, currentRow, currentCol, gameOver;

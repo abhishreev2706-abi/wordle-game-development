@@ -248,13 +248,21 @@ h1 {
   .key  { height: 46px; min-width: 30px; font-size: 0.75rem; }
   
   /* Welcome screen mobile fixes */
-  .welcome-title { font-size: 2.8rem; letter-spacing: 6px; }
-  .welcome-glow { font-size: 1.8rem; }
-  .welcome-title-wrap { gap: 12px; }
-  .welcome-sub { font-size: 0.9rem; padding: 0 20px; }
-  .welcome-btns { flex-direction: column; gap: 10px; width: 100%; max-width: 280px; }
-  .welcome-btns button { padding: 12px 24px; font-size: 0.95rem; }
-  .welcome-content { gap: 16px; padding: 0 20px; }
+  .welcome-title { font-size: 2.8rem !important; letter-spacing: 6px !important; }
+  .welcome-glow { font-size: 1.8rem !important; }
+  .welcome-title-wrap { gap: 12px !important; }
+  .welcome-sub { font-size: 0.9rem !important; padding: 0 20px !important; }
+  .welcome-btns { flex-direction: column !important; gap: 10px !important; width: 100% !important; max-width: 280px !important; }
+  .welcome-btns button { padding: 12px 24px !important; font-size: 0.95rem !important; }
+  .welcome-content { gap: 16px !important; padding: 0 20px !important; }
+}
+
+@media (max-width: 480px) {
+  .welcome-title { font-size: 2.5rem !important; letter-spacing: 4px !important; }
+  .welcome-glow { font-size: 1.5rem !important; }
+  .welcome-title-wrap { gap: 10px !important; }
+  .welcome-sub { font-size: 0.85rem !important; }
+  .welcome-btns button { padding: 10px 20px !important; font-size: 0.9rem !important; }
 }
 
 /* ── Welcome Screen ── */
