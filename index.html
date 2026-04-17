@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MyWordle</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Welcome Screen -->
+  <div id="welcome">
+    <canvas id="space-canvas"></canvas>
+    <div class="welcome-content">
+      <div class="welcome-title-wrap">
+        <span class="welcome-glow">✦</span>
+        <h1 class="welcome-title">MyWordle</h1>
+        <span class="welcome-glow">✦</span>
+      </div>
+      <p class="welcome-sub">Guess the hidden word and complete the mission.</p>
+      <div class="welcome-btns">
+        <button id="start-btn">Start Game</button>
+        <button id="how-btn">📖 How to Play</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- How to Play Popup -->
+  <div id="htp-modal" class="hidden">
+    <div class="htp-box">
+      <h2>How to Play</h2>
+      <p>Guess the <strong>5-letter word</strong> in <strong>6 tries</strong>.</p>
+      <ul>
+        <li><span class="htp-tile correct">G</span> Correct letter, correct spot</li>
+        <li><span class="htp-tile present">P</span> Correct letter, wrong spot</li>
+        <li><span class="htp-tile absent">A</span> Letter not in the word</li>
+      </ul>
+      <button id="htp-close">Got it!</button>
+    </div>
+  </div>
+
+  <div class="stars"></div>
+
+  <header>
+    <h1>✦ MyWordle ✦</h1>
+    <p class="subtitle">Guess the 5-letter word in 6 tries</p>
+    <button id="reset-btn" onclick="init()">↺ Reset</button>
+  </header>
+
+  <div id="board"></div>
+
+  <div id="keyboard">
+    <div class="kb-row" id="row1"></div>
+    <div class="kb-row" id="row2"></div>
+    <div class="kb-row" id="row3"></div>
+  </div>
+
+  <div id="message"></div>
+
+  <div id="modal" class="hidden">
+    <div class="modal-box">
+      <p id="modal-text"></p>
+      <p id="modal-word"></p>
+      <button id="restart-btn">Play Again</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
