@@ -1,1 +1,1 @@
-# wordle-game-development
+# wordle-game
