@@ -16,7 +16,7 @@ const KEYBOARD_ROWS = [
   ['z','x','c','v','b','n','m','Enter']
 ];
 
-let secret, board, currentRow, currentCol, gameOver;
+let secret, board, currentRow, currentCol, gameOver, hintsLeft;
 
 /* ── Welcome Screen ── */
 (function initWelcome() {
@@ -114,11 +114,13 @@ function init() {
   currentRow = 0;
   currentCol = 0;
   gameOver   = false;
+  hintsLeft  = 3;
 
   renderBoard();
   renderKeyboard();
   document.getElementById('modal').classList.add('hidden');
   hideMessage();
+  updateHintBtn();
 }
 
 function renderBoard() {
@@ -279,7 +281,31 @@ function getTile(r, c) {
   return document.getElementById(`tile-${r}-${c}`);
 }
 
+function updateHintBtn() {
+  const btn = document.getElementById('hint-btn');
+  document.getElementById('hint-count').textContent = `(${hintsLeft})`;
+  btn.disabled = hintsLeft <= 0 || gameOver;
+}
+
+function useHint() {
+  if (gameOver || hintsLeft <= 0) return;
+  for (let c = 0; c < 5; c++) {
+    const tile = getTile(currentRow, c);
+    if (!tile.classList.contains('correct')) {
+      board[currentRow][c] = secret[c];
+      tile.textContent = secret[c];
+      tile.classList.add('filled', 'correct');
+      if (currentCol <= c) currentCol = c + 1;
+      break;
+    }
+  }
+  hintsLeft--;
+  updateHintBtn();
+  if (hintsLeft === 0) showMessage('No hints left!', 2000);
+}
+
 document.addEventListener('keydown', e => handleKey(e.key === 'Backspace' ? 'Backspace' : e.key));
 document.getElementById('restart-btn').addEventListener('click', init);
+document.getElementById('hint-btn').addEventListener('click', useHint);
 
 init();

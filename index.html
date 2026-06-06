@@ -43,7 +43,10 @@
   <header>
     <h1>✦ MyWordle ✦</h1>
     <p class="subtitle">Guess the 5-letter word in 6 tries</p>
-    <button id="reset-btn" onclick="init()">↺ Reset</button>
+    <div class="header-btns">
+      <button id="reset-btn" onclick="init()">↺ Reset</button>
+      <button id="hint-btn">💡 Hint <span id="hint-count">(3)</span></button>
+    </div>
   </header>
 
   <div id="board"></div>

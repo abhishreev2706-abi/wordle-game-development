@@ -55,13 +55,16 @@ h1 {
   margin-top: 4px;
 }
 
-#reset-btn {
+.header-btns {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
   margin-top: 10px;
+}
+
+#reset-btn, #hint-btn {
   padding: 6px 18px;
-  border: 1px solid #3a3a6a;
   border-radius: 20px;
-  background: transparent;
-  color: #a78bfa;
   font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
@@ -69,9 +72,32 @@ h1 {
   transition: background 0.2s, transform 0.1s;
 }
 
+#reset-btn {
+  border: 1px solid #3a3a6a;
+  background: transparent;
+  color: #a78bfa;
+}
+
 #reset-btn:hover {
   background: #1e1e3a;
   transform: scale(1.05);
+}
+
+#hint-btn {
+  border: 1px solid #854d0e;
+  background: transparent;
+  color: #fbbf24;
+}
+
+#hint-btn:hover {
+  background: #1e1a0a;
+  transform: scale(1.05);
+}
+
+#hint-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
 }
 
 /* ── Board ── */
